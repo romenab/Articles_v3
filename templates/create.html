@@ -1,0 +1,40 @@
+{% extends "layouts/app.html" %}
+
+{% block content %}
+<h1 class="text-5xl bg-zinc-600 text-slate-50 font-semibold">CREATE NEW ARTICLE</h1>
+<a href="/">
+    <div class="pl-10 pt-6">
+        <button type="submit"
+                class="py-2 px-5 bg-violet-500 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">
+            BACK
+        </button>
+    </div>
+</a>
+<div class="flex justify-center items-center pt-3">
+    <form action="/create" method="POST">
+        <label class="block">
+        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+            Headline
+        </span>
+            <input type="text" name='headline'
+                   class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-violet-600 focus:border-violet-600 block sm:w-96 rounded-md sm:text-sm focus:ring-1"
+                   placeholder="Enter headline"/>
+        </label>
+        <label class="block mt-4">
+        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+            Body
+        </span>
+            <textarea name="body" id="body" rows="5"
+                      class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-violet-600 focus:border-violet-600 block sm:w-96 rounded-md sm:text-sm focus:ring-1"
+                      placeholder="Enter content"></textarea>
+        </label>
+        {% if error %}
+        <div class="text-red-500">{{ error }}</div>
+        {% endif %}
+        <button type="submit"
+                class="mt-4 px-4 py-2 bg-violet-500 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">
+            SUBMIT
+        </button>
+    </form>
+</div>
+{% endblock %}

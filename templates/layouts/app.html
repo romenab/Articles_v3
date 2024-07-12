@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Articles</title>
+    <style>
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 15vh;
+            margin: 0;
+        }
+
+        h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            margin: 0;
+        }
+
+        .heart-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .heart-icon {
+            font-size: 30px;
+            color: red;
+            transition: color 0.3s;
+        }
+
+        .heart-button:hover .heart-icon {
+            color: #af0000;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 40
+        }
+    </style>
+</head>
+<body>
+{% block content %}{% endblock %}
+</body>
+</html>
